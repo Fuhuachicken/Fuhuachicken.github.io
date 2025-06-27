@@ -348,32 +348,40 @@ html {
 
 /* Responsive cho màn hình nhỏ */
 @media (max-width: 600px) {
+  body {
+    padding-bottom: 50px; /* tránh bị cụt cuối */
+  }
+
   .header {
     font-size: 24px;
     padding: 15px 10px;
     width: 100%;
   }
-
   .container {
     padding: 10px;
     width: 93%;
+    margin-top: 5%;
+  }
+  .sub-menu{
+    visibility: hidden;
   }
 
   .card {
-    padding: 12px;
-    margin-bottom: 16px;
+    padding: 10px;
+    margin: 10px 8px;
   }
 
   .info-card {
-    position: static; /* bỏ absolute để tránh tràn màn hình */
+    position: static;
     margin-top: 30px;
     font-size: 16px;
     padding: 12px;
     border-radius: 8px;
-    width: calc(container);
+    width: 100%;
   }
-  #info1,#info3, #info2, #info4 {
-    position:static !important;
+
+  #info1, #info2, #info3, #info4 {
+    position: static !important;
     width: 100% !important;
     background: #a5bce7;
     color: white;
@@ -384,60 +392,90 @@ html {
     text-align: center;
   }
 
-   #info1 > div, #info2 > div, #info4 > div {
+  #info1 > div, #info2 > div, #info4 > div {
     justify-content: center;
     margin-top: 5px;
     flex-wrap: wrap;
   }
+
   .chart {
-    height: 200px !important; /* chiều cao nhỏ hơn trên điện thoại */
+    width: 100% !important;
+    padding: 0 8px;
   }
+
+  .info-box {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .text-container span,
+  .text-container strong {
+    font-size: 16px;
+  }
+
   .footer {
     font-size: 14px;
     padding: 8px;
   }
+
   #date-range-container {
-  position: fixed;
-  top: 60px; /* nằm ngay dưới header 60px */
-  left: 0;
-  right: 0;
-  z-index: 998;
-  
-  width: 100%;
-  max-width: 350px;
-  margin: 0 0;
-  padding: 16px;
-  box-sizing: border-box;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    width: 100%;
+    max-width: 350px;
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    background: #f9fbff;
+    box-shadow: 0 4px 16px rgba(0, 123, 255, 0.1);
+    border: 1px solid #dce8f5;
+    border-radius: 0 0 12px 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  }
 
-  background: #f9fbff;
-  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.1);
-  border: 1px solid #dce8f5;
-  border-radius: 0 0 12px 0;
+  #date-range-container.show {
+    max-height: 120vh;
+    overflow-y: auto;
+  }
 
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-}
-#date-range-container.show {
-   max-height: 120vh; /* tự động theo chiều cao màn hình */
-  overflow-y: auto; /* thêm scroll nếu quá dài */
-}#download-excel-btn {
-  width: 100%;
-  max-width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 14px;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
+  #download-excel-btn {
+    width: 100%;
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
 
   .time-wrapper {
-  flex-direction: column;
+    flex-direction: column;
+  }
+
+  .time-picker {
+    width: 100% !important;
+  }
 }
-.time-picker {
-  width: 100% !important;
-}
+@media (max-width: 600px) {
+  .info-box {
+    min-width: 100% !important;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr; /* mỗi hàng 1 ô trên mobile */
+    padding: 0 10px;
+    gap: 10px;
+  }
 }
 
