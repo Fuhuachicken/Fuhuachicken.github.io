@@ -88,6 +88,10 @@ body {
   color: red;
   margin-top: 10px;
 }
+.logo{
+  height: 100%;
+}
+/* MEDIA QUERIES CHO MÀN HÌNH NHỎ (ĐIỆN THOẠI) */
 /* MEDIA QUERIES CHO MÀN HÌNH NHỎ (ĐIỆN THOẠI) */
 @media (max-width: 768px) {
   body {
@@ -116,8 +120,6 @@ body {
   padding: 10px 50px;
   border: none;
   border-radius: 10px;
-  background-color: 	#F3C623;
-  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
   font-size: 24px;
@@ -128,8 +130,6 @@ body {
   padding: 10px 50px;
   border: none;
   border-radius: 10px;
-  background-color: #FFA500;
-  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
   font-size: 24px;
@@ -141,5 +141,10 @@ body {
   width: 90%;
   border-radius: 10px;
   border: 1px solid #F4F6F9;
+  }
+  #logo{
+    padding-top: 36.2%;
+    max-height: 150px;
+    padding-bottom: 15%;
   }
 }
